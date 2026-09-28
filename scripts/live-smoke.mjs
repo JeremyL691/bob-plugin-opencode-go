@@ -14,14 +14,26 @@ const source = readFileSync(new URL('../plugin/main.js', import.meta.url), 'utf8
 const cases = [
   { model: 'deepseek-v4.1-flash', protocol: 'chat' },
   { model: 'gpt-5.6-luna', protocol: 'responses' },
-  { model: 'minimax-m3', protocol: 'messages' }
+  { model: 'minimax-m3', protocol: 'messages' },
+  { model: 'grok-4.7', protocol: 'responses' },
+  { model: 'kimi-k3', protocol: 'chat' },
+  { model: 'qwen3.8-max', protocol: 'messages' },
+  { model: 'glm-5.3-flash', protocol: 'chat' },
+  { model: 'glm-5.2', protocol: 'chat' },
+  { model: 'mimo-v2.6-flash', protocol: 'chat' },
+  { model: 'longcat-2.0', protocol: 'chat' }
 ];
+const args = process.argv.slice(2);
+const effortArg = args.find((arg) => arg.startsWith('--effort='));
+const effort = effortArg ? effortArg.slice('--effort='.length) : 'lowest';
+const selected = args.filter((arg) => !arg.startsWith('--'));
 
 for (const item of cases) {
+  if (selected.length && !selected.includes(item.model)) continue;
   let requested;
   let finished;
   const context = vm.createContext({
-    $option: { apiKey: key, model: item.model, customModel: '', customProtocol: 'chat' },
+    $option: { apiKey: key, model: item.model, customModel: '', customProtocol: 'chat', thinkingEffort: effort },
     $http: { request: (value) => { requested = value; } }
   });
   vm.runInContext(source, context);
@@ -42,6 +54,7 @@ for (const item of cases) {
   console.log(JSON.stringify({
     model: item.model,
     protocol: item.protocol,
+    effort,
     status: response.status,
     result: finished?.result?.content?.text ?? null,
     error: finished?.error?.message ?? null

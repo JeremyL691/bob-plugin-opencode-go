@@ -2,12 +2,12 @@
   "identifier": "com.jeremyl691.opencodetranslate",
   "versions": [
     {
-      "version": "0.1.0",
-      "desc": "首次发布：支持 OpenCode Go 模型文本翻译。",
-      "sha256": "44eb8fd63049f30be8229c1be01c983a84a516a376dbc7654b3f3ebbf5f41cf3",
-      "url": "https://github.com/JeremyL691/bob-plugin-opencode-go/releases/download/v0.1.0/opencode-go-translate_0.1.0.bobplugin",
+      "version": "0.1.1",
+      "desc": "增加可选思考等级及模型接口自动映射。",
+      "sha256": "012a4c973f94bc9ab7b26c260ce82d5add0fcd11ce0aef7dcb324cd578625f4a",
+      "url": "https://github.com/JeremyL691/bob-plugin-opencode-go/releases/download/v0.1.1/opencode-go-translate_0.1.1.bobplugin",
       "minBobVersion": "1.21.0",
-      "timestamp": 1790559072522
+      "timestamp": 1790560687448
     }
   ]
 }

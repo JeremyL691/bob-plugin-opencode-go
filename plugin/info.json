@@ -1,6 +1,6 @@
 {
   "identifier": "com.jeremyl691.opencodetranslate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "category": "translate",
   "name": "OpenCode Go 翻译",
   "summary": "使用自己的 OpenCode Go API Key 翻译文本",
@@ -58,17 +58,33 @@
       ]
     },
     {
+      "identifier": "thinkingEffort",
+      "type": "menu",
+      "title": "思考等级",
+      "desc": "按模型支持范围匹配；不可控模型使用服务端默认。",
+      "defaultValue": "lowest",
+      "menuValues": [
+        { "title": "最低可用", "value": "lowest" },
+        { "title": "低", "value": "low" },
+        { "title": "中", "value": "medium" },
+        { "title": "高", "value": "high" },
+        { "title": "极高", "value": "xhigh" },
+        { "title": "最高", "value": "max" },
+        { "title": "服务端默认", "value": "auto" }
+      ]
+    },
+    {
       "identifier": "customModel",
       "type": "text",
       "title": "自定义模型 ID",
-      "desc": "填写后优先使用此模型；只填 ID，不加 opencode-go/ 前缀。",
+      "desc": "填写后优先使用此模型；已收录 ID 自动选择接口。",
       "textConfig": { "type": "visible", "placeholderText": "留空则使用上方模型" }
     },
     {
       "identifier": "customProtocol",
       "type": "menu",
       "title": "自定义模型接口",
-      "desc": "仅填写自定义模型 ID 时生效。",
+      "desc": "仅填写菜单中未收录的模型 ID 时生效。",
       "defaultValue": "chat",
       "menuValues": [
         { "title": "Chat Completions", "value": "chat" },

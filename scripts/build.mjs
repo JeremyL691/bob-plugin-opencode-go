@@ -32,7 +32,7 @@ const appcast = {
   identifier: info.identifier,
   versions: [{
     version: info.version,
-    desc: '首次发布：支持 OpenCode Go 模型文本翻译。',
+    desc: '增加可选思考等级及模型接口自动映射。',
     sha256: digest,
     url: releaseUrl,
     minBobVersion: info.minBobVersion,

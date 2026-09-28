@@ -1,0 +1,13 @@
+{
+  "identifier": "com.jeremyl691.opencodetranslate",
+  "versions": [
+    {
+      "version": "0.1.0",
+      "desc": "首次发布：支持 OpenCode Go 模型文本翻译。",
+      "sha256": "44eb8fd63049f30be8229c1be01c983a84a516a376dbc7654b3f3ebbf5f41cf3",
+      "url": "https://github.com/JeremyL691/bob-plugin-opencode-go/releases/download/v0.1.0/opencode-go-translate_0.1.0.bobplugin",
+      "minBobVersion": "1.21.0",
+      "timestamp": 1790559072522
+    }
+  ]
+}
